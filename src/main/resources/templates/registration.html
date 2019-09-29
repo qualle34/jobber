@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <title>Jobber | Registration</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+    <link th:href="@{/css/registration.css}" rel="stylesheet">
+    <link th:href="@{/css/footer.css}" rel="stylesheet">
+    <link th:href="@{/css/header.css}" rel="stylesheet">
+</head>
+<body>
+
+<!--header-->
+<div class="header">
+    <div class="flex">
+        <a href="/" class="logo">
+            <h1>Jobber</h1>
+        </a>
+        <div class="links-header">
+            <a href="/about">About</a>
+            <div class="dropdown">
+                <a onclick="myFunction()" class="image dropbtn" href="#"></a>
+                <div id="myDropdown" class="dropdown-content">
+                    <a class="text_bag" href="/registration">Sign up</a>
+                    <a class="text_bag" href="/login">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<form th:action="@{/registration}" method="post" class="ui-form">
+    <h3>Sign up</h3>
+    <div class="form-row">
+        <input name="email" type="text" id="email" required autocomplete="off">
+        <label for="email">Email</label>
+    </div>
+    <div class="form-row">
+        <input name="firstname" type="text" required autocomplete="off">
+        <label>Имя</label>
+    </div>
+    <div class="form-row">
+        <input name="lastname" type="text" required autocomplete="off">
+        <label>Фамилия</label>
+    </div>
+    <div class="form-row">
+        <input name="phone" type="text" required autocomplete="off">
+        <label>Телефон</label>
+    </div>
+    <div class="form-row">
+        <input name="email" type="text" required autocomplete="off">
+        <label>Специальность</label>
+    </div>
+    <div class="form-row">
+        <input name="password" type="password" required autocomplete="off">
+        <label>Пароль</label>
+    </div>
+
+    <p><input class="h" type="submit" value="Sign up"></p>
+</form>
+
+
+<!--footer-->
+<div class="footer">
+    <div class="grid-footer">
+        <div class="block-logo">
+            <a href="#up">
+                <h1>Jober</h1>
+            </a>
+        </div>
+        <div class="block-links-footer">
+            <div class="links-footer">
+                <a href="#">Контакты</a>
+                <a href="#">Задания</a>
+            </div>
+        </div>
+        <div class="block-soc">
+            <div class="block-soc-content">
+                <a href="#" class="instagram">
+                    <img src="img/Instagram-Logo.png">
+                </a>
+                <a href="#" class="facebook">
+                    <img src="img/50-Best-Facebook-Logo-Icons-GIF-Transparent-PNG-Images-33.png">
+                </a>
+                <a href="#" class="vk">
+                    <img src="img/25684.png">
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

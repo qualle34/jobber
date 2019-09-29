@@ -1,0 +1,168 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Questrial', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+/*footer*/
+
+.footer {
+    background: #a6adb4;
+    height: 120px;
+}
+
+.grid-footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax (200px, auto);
+    align-items: center;
+    padding-top: 50px;
+}
+
+.block-logo {
+    text-align: center;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.block-links-footer {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.links-footer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.links-footer a {
+    margin-right: 20px;
+    font-size: 15px;
+}
+
+.block-soc {
+    position: relative;
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+
+.block-soc-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.block-soc a {
+    margin-right: 10px;
+}
+
+.instagram > img {
+    background-size: contain;
+    width: 21px;
+    height: 21px;
+}
+
+.facebook > img {
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+}
+
+.vk > img {
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+}
+
+@media screen and (max-width: 768px) {
+    .block-logo {
+        text-align: start;
+        padding-left: 20px;
+    }
+
+    .grid-footer {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax (200px, auto) minmax (200px, auto);
+    }
+
+    .footer h1 {
+        font-size: 22px;
+    }
+
+    .links-footer a {
+        margin-right: 20px;
+        font-size: 13px;
+    }
+
+    .block-soc {
+        position: none;
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+    }
+
+    .block-soc a {
+        margin-right: 10px;
+    }
+
+    .instagram > img {
+        background-size: contain;
+        width: 16px;
+        height: 16px;
+    }
+
+    .facebook > img {
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+    }
+
+    .vk > img {
+        background-size: contain;
+        width: 18px;
+        height: 18px;
+    }
+
+    .block-soc-content {
+        top: 0;
+        padding-top: 70px;
+    }
+}
+
+@media screen and (max-width: 407px) {
+        .footer {
+            min-height: 250px;
+        }
+
+        .links-footer {
+            display: flex;
+            flex-direction: column;
+        }
+    
+    .block-soc-content {
+        padding-bottom: 25px;
+    }
+
+        .links-footer a {
+            margin-right: 15px;
+            padding: 5px 0;
+            font-size: 14px;
+        }
+    }

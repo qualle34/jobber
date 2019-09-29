@@ -1,0 +1,233 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Questrial', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+    padding: 0;
+    margin: 0;
+}
+
+.block-name-task {
+    min-height: 450px;
+    background: url("https://images.unsplash.com/photo-1560285509-3ebfa70a171d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1424&q=80") 50% 50%;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+}
+
+.block-name-task-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.block-name-task-content h1 {
+    text-align: center;
+}
+
+.task-category-adress {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 15px;
+}
+
+.profession::before {
+    content: '';
+    display: inline-block;
+    background: url("../img/420px-Globe_icon.svg.png") no-repeat 50% 50%;
+    width: 17px;
+    height: 17px;
+    background-size: contain;
+    padding-right: 10px;
+}
+
+.profession,
+.city,
+.data-description p {
+    display: flex;
+    align-items: center;
+}
+
+.city::before {
+    content: '';
+    display: inline-block;
+    background: url("../img/_building-512.png") no-repeat 50% 50%;
+    padding-right: 10px;
+    width: 17px;
+    height: 17px;
+    background-size: contain;
+}
+
+.author {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.author p {
+    padding-left: 15px;
+}
+
+.author-content {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 350px;
+    align-items: center;
+}
+
+.button-next a {
+    padding: 10px;
+    background: #fa6980;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/*content task*/
+
+.description-task {
+    background: #f6f8f9;
+    min-height: 350px;
+}
+
+.grid-description {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    grid-auto-rows: minmax (600px, auto);
+    grid-gap: 40px;
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.block-description-question {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.block-description-essence {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.text-description-essence {
+    padding-top: 15px;
+}
+
+.text-description-question {
+    border-right: 1px solid gray;
+    color: #666;
+    padding: 15px 5px 65px;
+}
+
+.text-description-essence {
+    color: #666;
+}
+
+.data-description {
+    border-top: 1px dashed gray;
+    padding: 25px 0 50px;
+    width: 80%;
+}
+
+.data-description p::before {
+    content: '';
+    display: inline-block;
+    background: url("../img/access-time-512.png") no-repeat 50% 50%;
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+    padding-left: 10px;
+}
+
+.data-description p {
+    padding-top: 15px;
+}
+
+.map {
+    padding: 20px 0 50px;
+}
+
+/*media screen*/
+
+@media screen and (max-width:768px) {
+    .block-name-task-content h1 {
+        font-size: 23px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    .text-description-question,
+    .text-description-essence {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .block-name-task-content h1 {
+        font-size: 20px;
+    }
+
+    .task-category-adress {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 583px) {
+    .grid-description {
+        grid-template-columns: 1fr;
+        grid-auto-rows: minmax (600px, auto) minmax (600px, auto) minmax (600px, auto);
+        grid-gap: 10px;
+    }
+
+    .block-description-question {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    .block-description-essence {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    .text-description-question {
+        border-right: none;
+        padding: 15px 0 0 0;
+    }
+
+    .data-description {
+        border-top: none;
+    }
+}
+
+@media screen and (max-width:424px) {
+    .author-content {
+        display: block;
+    }
+
+    .button-next {
+        padding: 25px 0;
+    }
+    
+    h1 {
+        font-size: 16px;
+    }
+
+    .text-description-question, .text-description-essence {
+        font-size: 14px;
+    }
+}

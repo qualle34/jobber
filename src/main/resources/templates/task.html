@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <title>Jobber | Task</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+    <link th:href="@{/css/task.css}" rel="stylesheet">
+    <link th:href="@{/css/footer.css}" rel="stylesheet">
+    <link th:href="@{/css/header.css}" rel="stylesheet">
+</head>
+
+<body>
+
+<!--header-->
+<div class="header">
+    <div class="flex">
+        <a href="/" class="logo">
+            <h1>Jobber</h1>
+        </a>
+        <div class="links-header">
+            <a href="/about">About</a>
+            <div class="dropdown">
+                <a onclick="myFunction()" class="image dropbtn" href="#"></a>
+                <div id="myDropdown" class="dropdown-content">
+                    <a class="text_bag" href="/profile">Profile</a>
+                    <a class="text_bag" href="/registration">Sign up</a>
+                    <a class="text_bag" href="/login">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="task-create">
+    <div class="block-name-task">
+        <div class="block-name-task-content">
+            <h1 th:text="${title}"></h1>
+            <div class="task-category-adress">
+                <p class="profession" th:text="${area}"></p>
+                <p class="city" th:text="${location}"></p>
+            </div>
+        </div>
+        <div class="author-content">
+            <div class="author">
+                <img src="/img/avatar-1.svg">
+                <p th:text="${empl_name}"></p>
+            </div>
+            <div class="button-next">
+                <a th:href="@{/task/{id}(id=${task_id})}">Следующая работа</a>
+            </div>
+        </div>
+    </div>
+    <div class="description-task">
+
+        <div class="grid-description">
+            <div class="block-description-question">
+                <h1>Возникли вопросы с выполнением задания?</h1>
+                <div class="data-description">
+                    <h1 class="data-title">Дата публикации</h1>
+                    <p>3h ago</p>
+                </div>
+            </div>
+
+            <div class="block-description-essence">
+                <img src="/img/avatar-1.svg">
+                <p class="text-description-essence">
+                <p th:text="${description}"></p></div>
+        </div>
+
+    </div>
+</div>
+
+<!--footer-->
+<div class="footer">
+    <div class="grid-footer">
+        <div class="block-logo">
+            <a href="#up">
+                <h1>Jobber</h1>
+            </a>
+        </div>
+        <div class="block-links-footer">
+            <div class="links-footer">
+                <a href="#">Контакты</a>
+                <a href="#">Задания</a>
+            </div>
+        </div>
+        <div class="block-soc">
+            <div class="block-soc-content">
+                <a href="#" class="instagram">
+                    <img src="/img/Instagram-Logo.png">
+                </a>
+                <a href="#" class="facebook">
+                    <img src="/img/50-Best-Facebook-Logo-Icons-GIF-Transparent-PNG-Images-33.png">
+                </a>
+                <a href="#" class="vk">
+                    <img src="/img/25684.png">
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

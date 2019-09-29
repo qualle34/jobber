@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <title>Jobber | Send Task</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+    <link th:href="@{/css/send_task.css}" rel="stylesheet">
+    <link th:href="@{/css/header.css}" rel="stylesheet">
+</head>
+
+<body>
+<!--header-->
+<div class="header">
+    <div class="flex">
+        <a href="/" class="logo">
+            <h1>Jobber</h1>
+        </a>
+        <div class="links-header">
+            <a href="/about">About</a>
+            <div class="dropdown">
+                <a onclick="myFunction()" class="image dropbtn" href="#"></a>
+                <div id="myDropdown" class="dropdown-content">
+                    <a class="text_bag" href="/profile">Profile</a>
+                    <a class="text_bag" href="/registration">Sign up</a>
+                    <a class="text_bag" href="/login">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form action="" class="ui-form">
+    <h3>Создание</h3>
+    <div class="task">
+        <form th:action="@{/sendtask}" method="post">
+            <div class="form-row">
+                <input type="text" name="title" required autocomplete="off"><label>Задание</label>
+            </div>
+            <br>
+            <div class="form-row">
+                <input type="text" name="description" required autocomplete="off"><label>Требуемая
+                специальность</label>
+            </div>
+            <br>
+            <label> <label for="uploadbtn" class="uploadButton">Загрузить фото</label>
+                <input style="opacity: 0; z-index: -1;" type="file" name="upload" id="uploadbtn"></label><br>
+            <label type="text"><br>
+                <label class="text-1">Описание</label>
+                <textarea class="txt" required> </textarea></label>
+        </form>
+        <p><input class="h" type="submit" value="Отправить"></p>
+    </div>
+
+</body>
+
+</html>
