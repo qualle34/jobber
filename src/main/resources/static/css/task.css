@@ -152,6 +152,10 @@ a {
     padding-left: 10px;
 }
 
+.block-description-question p {
+    padding: 10px 0;
+}
+
 .data-description p {
     padding-top: 15px;
 }
