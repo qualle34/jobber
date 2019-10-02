@@ -19,15 +19,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests().anyRequest().authenticated()
                 .and()
                 .httpBasic();
-        http.authorizeRequests()
-                .antMatchers("/login", "/", "/registration", "/css/*", "/js/*", "/img/*").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .formLogin()
-                .loginPage("/login")
-                .and()
-                .logout()
-                .permitAll();
     }
 
 
@@ -39,11 +30,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         users.roles("USER");
         return new InMemoryUserDetailsManager(users.build());
     }
-
-//    public void configure(AuthenticationManagerBuilder auth)
-//            throws Exception {
-//        auth.jdbcAuthentication().dataSource(dataSource).
-//                usersByUsernameQuery("select email, password, enabled from user where email=?")
-//                .authoritiesByUsernameQuery("select email from user where email=?");
-//    }
 }
