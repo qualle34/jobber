@@ -9,34 +9,18 @@
     <link th:href="@{/css/registration.css}" rel="stylesheet">
     <link th:href="@{/css/footer.css}" rel="stylesheet">
     <link th:href="@{/css/header.css}" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+    <script src="static/js/header.js" th:src="@{/js/header.js}" type="text/javascript"></script>
 </head>
 <body>
 
-<!--header-->
-<div class="header">
-    <div class="flex">
-        <a href="/" class="logo">
-            <h1>Jobber</h1>
-        </a>
-        <div class="links-header">
-            <a href="/about">About</a>
-            <div class="dropdown">
-                <a onclick="myFunction()" class="image dropbtn" href="#"></a>
-                <div id="myDropdown" class="dropdown-content">
-                    <a class="text_bag" href="/registration">Sign up</a>
-                    <a class="text_bag" href="/login">Login</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
+<div class="header" th:insert="fragments/header :: header"></div>
 
 <form th:action="@{/registration}" method="post" class="ui-form">
     <h3>Sign up</h3>
     <div class="form-row">
-        <input name="email" type="text" id="email" required autocomplete="off">
-        <label for="email">Email</label>
+        <input name="login" type="text" required autocomplete="off">
+        <label>Логин</label>
     </div>
     <div class="form-row">
         <input name="firstname" type="text" required autocomplete="off">
@@ -47,12 +31,16 @@
         <label>Фамилия</label>
     </div>
     <div class="form-row">
+        <input name="location" type="text" required autocomplete="off">
+        <label>Город</label>
+    </div>
+    <div class="form-row">
         <input name="phone" type="text" required autocomplete="off">
         <label>Телефон</label>
     </div>
     <div class="form-row">
-        <input name="email" type="text" required autocomplete="off">
-        <label>Специальность</label>
+        <input name="email" type="text" id="email" required autocomplete="off">
+        <label for="email">Email</label>
     </div>
     <div class="form-row">
         <input name="password" type="password" required autocomplete="off">
@@ -63,35 +51,7 @@
 </form>
 
 
-<!--footer-->
-<div class="footer">
-    <div class="grid-footer">
-        <div class="block-logo">
-            <a href="#up">
-                <h1>Jober</h1>
-            </a>
-        </div>
-        <div class="block-links-footer">
-            <div class="links-footer">
-                <a href="#">Контакты</a>
-                <a href="#">Задания</a>
-            </div>
-        </div>
-        <div class="block-soc">
-            <div class="block-soc-content">
-                <a href="#" class="instagram">
-                    <img src="img/Instagram-Logo.png">
-                </a>
-                <a href="#" class="facebook">
-                    <img src="img/50-Best-Facebook-Logo-Icons-GIF-Transparent-PNG-Images-33.png">
-                </a>
-                <a href="#" class="vk">
-                    <img src="img/25684.png">
-                </a>
-            </div>
+<div class="footer" th:insert="fragments/footer :: footer"></div>
 
-        </div>
-    </div>
-</div>
 </body>
 </html>

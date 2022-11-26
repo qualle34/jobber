@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<table class="fl-table" th:fragment="tasks">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Start</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="task : ${tasks}" style="cursor: pointer" th:onclick="'javascript:followEdit(\'' + ${trip.id} + '\');'">
+        <td th:text="${task.id}"></td>
+        <td th:text="${task.title}"></td>
+        <td th:text="${task.description}"></td>
+        <td th:text="${task.start}"></td>
+    </tr>
+    <tbody>
+</table>
+
+<table class="fl-table" th:fragment="users">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Role</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.firstname}"></td>
+        <td th:text="${user.lastname}"></td>
+        <td th:text="${user.role.value}"></td>
+    </tr>
+    <tbody>
+</table>
+
+</body>
+</html>

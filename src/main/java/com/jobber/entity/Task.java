@@ -1,125 +1,47 @@
 package com.jobber.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "task")
 public class Task {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "task_id")
-    private int id;
+    private Long id;
 
     private String title;
+
     private String description;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "employer_id")
     private Employer employer;
 
-    @ManyToMany(mappedBy = "areaSet", fetch = FetchType.EAGER)
-    private Set<User> userSet;
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "area_id")
-    private Area area;
-
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "status_id")
     private Status status;
 
-    public Task() {
-    }
+    @ManyToOne
+    @JoinColumn(name = "area_id")
+    private Area area;
 
-    public Task(String title, String description, Employer employer, Area area) {
-        this.title = title;
-        this.description = description;
-        this.employer = employer;
-        this.area = area;
-    }
+    @ManyToMany(mappedBy = "areaSet")
+    private List<User> userSet;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Employer getEmployer() {
-        return employer;
-    }
-
-    public void setEmployer(Employer employer) {
-        this.employer = employer;
-    }
-
-    public Set<User> getUserSet() {
-        return userSet;
-    }
-
-    public void setUserSet(Set<User> userSet) {
-        this.userSet = userSet;
-    }
-
-    public Area getArea() {
-        return area;
-    }
-
-    public void setArea(Area area) {
-        this.area = area;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Task task = (Task) o;
-        return id == task.id &&
-                Objects.equals(title, task.title) &&
-                Objects.equals(description, task.description);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, title, description);
-    }
-
-    @Override
-    public String toString() {
-        return "Task{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", area=" + area +
-                ", status=" + status +
-                '}';
-    }
+    @ManyToOne
+    @JoinColumn(name = "image_id")
+    private Image image;
 }

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div class="header" th:fragment="header">
+    <div class="flex">
+        <a href="/" class="logo">
+            <h1>Jobber</h1>
+        </a>
+        <div class="links-header">
+            <a href="/about">About</a>
+            <div class="dropdown">
+                <a onclick="myFunction()" class="image dropbtn" href="#"></a>
+                <div id="myDropdown" class="dropdown-content">
+                    <a class="text_bag" th:if="${#lists.isEmpty(authorities) != true}" href="/profile">Profile</a>
+                    <a class="text_bag" th:if="${#lists.contains(authorities, 'ADMIN')}" href="/admin">Control Panel</a>
+                    <a class="text_bag" th:if="${#lists.isEmpty(authorities)}" href="/registration">Sign up</a>
+                    <a class="text_bag" th:if="${#lists.isEmpty(authorities)}" href="/login">Login</a>
+                    <a class="text_bag" th:if="${#lists.isEmpty(authorities) != true}" href="/logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
