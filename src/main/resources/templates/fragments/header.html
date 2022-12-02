@@ -14,6 +14,7 @@
                 <div id="myDropdown" class="dropdown-content">
                     <a class="text_bag" th:if="${#lists.isEmpty(authorities) != true}" href="/profile">Profile</a>
                     <a class="text_bag" th:if="${#lists.contains(authorities, 'ADMIN')}" href="/admin">Control Panel</a>
+                    <a class="text_bag" th:if="${#lists.contains(authorities, 'EMPLOYER')}" href="/task/create">Create offer</a>
                     <a class="text_bag" th:if="${#lists.isEmpty(authorities)}" href="/registration">Sign up</a>
                     <a class="text_bag" th:if="${#lists.isEmpty(authorities)}" href="/login">Login</a>
                     <a class="text_bag" th:if="${#lists.isEmpty(authorities) != true}" href="/logout">Logout</a>

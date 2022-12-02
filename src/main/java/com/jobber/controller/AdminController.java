@@ -34,7 +34,7 @@ public class AdminController {
 
         model.addAttribute("authorities", retrieveAuthorities(auth));
         model.addAttribute("type", "users");
-        model.addAttribute("trips", userService.getAll());
+        model.addAttribute("users", userService.getAll());
 
         return "admin";
     }
@@ -44,7 +44,7 @@ public class AdminController {
 
         model.addAttribute("authorities", retrieveAuthorities(auth));
         model.addAttribute("type", "tasks");
-        model.addAttribute("trips", taskService.getAll());
+        model.addAttribute("tasks", taskService.getAll());
 
         return "admin";
     }

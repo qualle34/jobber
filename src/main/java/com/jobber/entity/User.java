@@ -7,8 +7,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Objects;
-import java.util.Set;
 
 @Getter
 @Setter
@@ -45,6 +43,9 @@ public class User {
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @PrimaryKeyJoinColumn
     private Credentials credentials;
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Employer employer;
 
     @ManyToOne
     @JoinColumn(name = "role_id")

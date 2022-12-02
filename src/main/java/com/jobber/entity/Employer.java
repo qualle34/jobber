@@ -24,7 +24,8 @@ public class Employer {
     private String title;
     private String description;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
     private User user;
 
     @OneToMany(mappedBy = "employer", cascade = CascadeType.ALL)

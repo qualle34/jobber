@@ -6,9 +6,9 @@
     <title>Jobber | Send Task</title>
 
     <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
-    <link th:href="@{/css/send_task.css}" rel="stylesheet">
-    <link th:href="@{/css/footer.css}" rel="stylesheet">
-    <link th:href="@{/css/header.css}" rel="stylesheet">
+    <link  rel="stylesheet" type="text/css" href="../static/css/send_task.css" th:href="@{/css/send_task.css}">
+    <link  rel="stylesheet" type="text/css" href="../static/css/footer.css" th:href="@{/css/footer.css}">
+    <link  rel="stylesheet" type="text/css" href="../static/css/header.css" th:href="@{/css/header.css}">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
     <script src="static/js/header.js" th:src="@{/js/header.js}" type="text/javascript"></script>
 </head>
@@ -17,28 +17,34 @@
 
 <div class="header" th:insert="fragments/header :: header"></div>
 
-<form action="" class="ui-form">
+<div class="ui-form">
     <h3>Создание</h3>
     <div class="task">
-        <form th:action="@{/sendtask}" method="post">
+        <form action="#" th:action="@{'/task/create'}" method="post">
             <div class="form-row">
                 <input type="text" name="title" required autocomplete="off"><label>Задание</label>
             </div>
             <br>
-            <div class="form-row">
-                <input type="text" name="description" required autocomplete="off"><label>Требуемая
-                специальность</label>
+            <span class="label-input">Область:</span>
+            <div class="wrap-input validate-input">
+                <select size="5" name="areaId">
+                    <option th:each="area : ${areas}" th:value="${area.id}" th:text="${area.name}"></option>
+                </select>
+                <span class="focus-input"></span>
             </div>
             <br>
             <label> <label for="uploadbtn" class="uploadButton">Загрузить фото</label>
-                <input style="opacity: 0; z-index: -1;" type="file" name="upload" id="uploadbtn"></label><br>
+                <input style="opacity: 0; z-index: -1;" type="file" name="upload" id="uploadbtn"></label>
+            <br>
             <label type="text"><br>
                 <label class="text-1">Описание</label>
-                <textarea class="txt" required> </textarea></label>
+                <textarea class="txt" name="description" required> </textarea>
+            </label>
+
+            <p><input class="h" type="submit" value="Submit"></p>
         </form>
-        <p><input class="h" type="submit" value="Отправить"></p>
     </div>
-</form>
+</div>
 
 
 <div class="footer" th:insert="fragments/footer :: footer"></div>

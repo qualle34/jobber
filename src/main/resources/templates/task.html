@@ -20,19 +20,19 @@
 <div class="task-create">
     <div class="block-name-task">
         <div class="block-name-task-content">
-            <h1 th:text="${title}"></h1>
+            <h1 th:text="${task.title}"></h1>
             <div class="task-category-adress">
-                <p class="profession" th:text="${area}"></p>
-                <p class="city" th:text="${location}"></p>
+                <p class="profession" th:text="${task.area.name}"></p>
+                <p class="city" th:text="${task.employer.user.location}"></p>
             </div>
         </div>
         <div class="author-content">
             <div class="author">
                 <img src="/img/avatar-1.svg">
-                <p th:text="${empl_name}"></p>
+                <p th:text="${task.employer.title}"></p>
             </div>
             <div class="button-next">
-                <a th:href="@{/task/{id}(id=${task_id})}">Следующая работа</a>
+                <a th:href="@{/task/{id}(id=${task.id} + 1)}">Следующая работа</a>
             </div>
         </div>
     </div>
@@ -51,7 +51,7 @@
             <div class="block-description-essence">
                 <img src="/img/avatar-1.svg">
                 <p class="text-description-essence">
-                <p th:text="${description}"></p></div>
+                <p th:text="${task.description}"></p></div>
         </div>
 
     </div>

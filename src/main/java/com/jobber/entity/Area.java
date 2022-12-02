@@ -29,4 +29,7 @@ public class Area {
     @ManyToMany(mappedBy = "areaSet", fetch = FetchType.LAZY)
     private Set<User> userSet;
 
+    public Area(Long id) {
+        this.id = id;
+    }
 }

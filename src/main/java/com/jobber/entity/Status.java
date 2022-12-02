@@ -26,4 +26,7 @@ public class Status {
     @OneToMany(mappedBy = "status", fetch = FetchType.LAZY)
     private List<Task> tasks;
 
+    public Status(Long id) {
+        this.id = id;
+    }
 }

@@ -24,4 +24,8 @@ public class Image {
 
     @OneToMany(mappedBy = "status")
     private List<Task> task;
+
+    public Image(Long id) {
+        this.id = id;
+    }
 }
